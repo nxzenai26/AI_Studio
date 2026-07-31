@@ -220,42 +220,44 @@ class NotebookRepository:
 
         return cell
 
-    async def delete_cell(
-        self,
-        notebook: NotebookModel,
-        cell_id: str,
-    ) -> bool:
+async def delete_cell(
+    self,
+    notebook: NotebookModel,
+    cell_id: str,
+) -> bool:
 
-        deleted = False
+    print("DELETE REQUEST:", cell_id)
 
-        for cell in notebook.cells:
-            if cell.id == cell_id and not cell.is_deleted:
-                cell.is_deleted = True
-                deleted = True
-                break
+    deleted = False
 
-        if not deleted:
-            return False
+    for cell in notebook.cells:
+        print("CELL ID:", cell.id, type(cell.id))
+        print("REQUEST:", cell_id, type(cell_id))
 
-        active_cells = sorted(
-            (
-                cell
-                for cell in notebook.cells
-                if not cell.is_deleted
-            ),
-            key=lambda c: c.position,
-        )
+        if str(cell.id) == str(cell_id) and not cell.is_deleted:
+            cell.is_deleted = True
+            deleted = True
+            break
 
-        for position, cell in enumerate(active_cells):
-            cell.position = position
+    if not deleted:
+        print("NO MATCH FOUND")
+        return False
 
-        notebook.updated_at = datetime.now(UTC)
+    active_cells = sorted(
+        (cell for cell in notebook.cells if not cell.is_deleted),
+        key=lambda c: c.position,
+    )
 
-        await self.update_notebook(notebook)
+    for position, cell in enumerate(active_cells):
+        cell.position = position
 
-        return True
+    notebook.updated_at = datetime.now(UTC)
 
-    async def reorder_cells(
+    await self.update_notebook(notebook)
+
+    return True
+
+async def reorder_cells(
         self,
         notebook: NotebookModel,
         positions: dict[str, int],
