@@ -7,6 +7,12 @@ from app.core.security.password import (
     verify_password,
 )
 
+from app.modules.auth.constants import (
+    SUPER_ADMIN,
+    USER,
+    SUPER_ADMIN_EMAILS,
+)
+
 from app.modules.auth.models import UserModel
 from app.modules.auth.repository import AuthRepository
 from app.modules.auth.schemas import (
@@ -47,14 +53,33 @@ class AuthService:
                 error_code="EMAIL_ALREADY_EXISTS",
             )
 
+        # -----------------------------------------------
+        # Assign Role
+        # -----------------------------------------------
+
+        role = (
+            SUPER_ADMIN
+            if request.email.lower() in SUPER_ADMIN_EMAILS
+            else USER
+        )
+
+        # -----------------------------------------------
+        # Create User
+        # -----------------------------------------------
+
         user = UserModel(
             email=request.email,
             username=request.username,
             full_name=request.full_name,
-            hashed_password=hash_password(request.password),
+            hashed_password=hash_password(
+                request.password
+            ),
+            role=role,
         )
 
-        created_user = await self.repository.create_user(user)
+        created_user = await self.repository.create_user(
+            user
+        )
 
         return created_user
 

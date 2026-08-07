@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff } from "lucide-react";
 import { toast } from "react-hot-toast";
+
 import useAuth from "@/hooks/useAuth";
 
 export default function LoginForm() {
@@ -11,23 +12,26 @@ export default function LoginForm() {
   const { login } = useAuth();
 
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] =
+    useState(false);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] =
+    useState(false);
 
   async function handleSubmit(
     e: React.FormEvent<HTMLFormElement>
   ) {
     e.preventDefault();
 
-    setLoading(true);
-
     try {
+      setLoading(true);
+
       await login(email, password);
 
-      toast.success("Login Successful");
+      toast.success("Welcome to NxZen NxZenAI Studio");
 
       router.push("/dashboard");
     } catch (err: any) {
@@ -43,15 +47,12 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md rounded-xl border border-slate-800 bg-slate-900 p-8 shadow-2xl"
+      className="space-y-6"
     >
-      <h1 className="mb-8 text-center text-3xl font-bold">
-        AI Studio
-      </h1>
+      <div>
 
-      <div className="mb-5">
-        <label className="mb-2 block">
-          Email
+        <label className="mb-2 block text-sm font-medium text-slate-300">
+          Email Address
         </label>
 
         <input
@@ -61,12 +62,25 @@ export default function LoginForm() {
           onChange={(e) =>
             setEmail(e.target.value)
           }
-          className="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 outline-none"
+          className="
+            w-full
+            rounded-xl
+            border
+            border-slate-700
+            bg-slate-950
+            p-3
+            text-white
+            outline-none
+            transition
+            focus:border-blue-500
+          "
         />
+
       </div>
 
-      <div className="mb-8">
-        <label className="mb-2 block">
+      <div>
+
+        <label className="mb-2 block text-sm font-medium text-slate-300">
           Password
         </label>
 
@@ -85,7 +99,19 @@ export default function LoginForm() {
                 e.target.value
               )
             }
-            className="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 pr-12 outline-none"
+            className="
+              w-full
+              rounded-xl
+              border
+              border-slate-700
+              bg-slate-950
+              p-3
+              pr-12
+              text-white
+              outline-none
+              transition
+              focus:border-blue-500
+            "
           />
 
           <button
@@ -95,7 +121,7 @@ export default function LoginForm() {
                 !showPassword
               )
             }
-            className="absolute right-3 top-3"
+            className="absolute right-4 top-3 text-slate-400"
           >
             {showPassword ? (
               <EyeOff size={20} />
@@ -103,19 +129,33 @@ export default function LoginForm() {
               <Eye size={20} />
             )}
           </button>
+
         </div>
+
       </div>
 
       <button
         disabled={loading}
-        className="w-full rounded-lg bg-blue-600 p-3 font-semibold transition hover:bg-blue-700"
+        className="
+          w-full
+          rounded-xl
+          bg-blue-600
+          py-3
+          text-lg
+          font-semibold
+          text-white
+          transition
+          hover:bg-blue-700
+          disabled:opacity-50
+        "
       >
         {loading
           ? "Signing In..."
-          : "Login"}
+          : "Sign In"}
       </button>
 
-      <p className="mt-6 text-center text-sm">
+      <div className="text-center text-sm text-slate-400">
+
         Don't have an account?
 
         <button
@@ -123,11 +163,13 @@ export default function LoginForm() {
           onClick={() =>
             router.push("/register")
           }
-          className="ml-2 text-blue-400"
+          className="ml-2 font-semibold text-blue-400 hover:text-blue-300"
         >
-          Register
+          Create Account
         </button>
-      </p>
+
+      </div>
+
     </form>
   );
 }

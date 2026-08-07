@@ -32,8 +32,24 @@ interface NotebookEditorContextType {
   createCodeCell: () => Promise<void>;
   createMarkdownCell: () => Promise<void>;
 
+  executeCell: (cellId: string) => Promise<void>;
+
   deleteCell: (cellId: string) => Promise<void>;
   duplicateCell: (cellId: string) => Promise<void>;
+  runAllCells: () => Promise<void>;
+  restartKernel: () => Promise<void>;
+
+  interruptKernel: () => Promise<void>;
+
+  
+
+  updateCell: (
+  cellId: string,
+  source: string
+) => Promise<void>;
+  
+  focusNextCell: (cellId: string) => void;
+
 
   setCells: React.Dispatch<React.SetStateAction<Cell[]>>;
 
@@ -145,7 +161,7 @@ export function NotebookEditorProvider({
           {
             cell_type: type,
             source: "",
-            position: cells.length,
+            
           }
         );
 
@@ -173,47 +189,85 @@ export function NotebookEditorProvider({
     await createCell("markdown");
   }
 
+
+//////////////////////////////////////////////////////
+// EXECUTE
+//////////////////////////////////////////////////////
+
+async function executeCell(cellId: string) {
+
+  if (!notebook) return;
+
+  try {
+
+    setSaving(true);
+    setError(null);
+
+    // Execute the cell
+    await cellService.execute(
+      notebook.id,
+      cellId
+    );
+
+    // Reload cells from backend
+    const latestCells = await refreshCells();
+
+    // Preserve selection
+    const current = latestCells.find(
+      (c) => c.id === cellId
+    );
+
+    if (current) {
+      setActiveCellId(current.id);
+      setSelectedCellId(current.id);
+    }
+
+  } catch (err) {
+
+    console.error(err);
+
+    setError("Failed to execute cell.");
+
+  } finally {
+
+    setSaving(false);
+
+  }
+
+}
+
   //////////////////////////////////////////////////////
   // DELETE
   //////////////////////////////////////////////////////
 
-  async function deleteCell(cellId: string) {
-    if (!notebook) return;
+async function deleteCell(cellId: string) {
+  if (!notebook) return;
 
-    try {
-      setSaving(true);
+  try {
+    setSaving(true);
+    setError(null);
 
-      await cellService.delete(
-        notebook.id,
-        cellId
-      );
+    // 1. Delete the cell in backend
+    await cellService.delete(notebook.id, cellId);
 
-      await cellService.delete(
-  notebook.id,
-  cellId
-);
+    // 2. Reload updated cells
+    const latestCells = await refreshCells();
 
-// Reload the latest cells from backend
-await refreshCells();
-
-const latestCells = await cellService.list(notebook.id);
-
-if (latestCells.length > 0) {
-  setActiveCellId(latestCells[0].id);
-  setSelectedCellId(latestCells[0].id);
-} else {
-  setActiveCellId(null);
-  setSelectedCellId(null);
-}
-    } catch (err) {
-      console.error(err);
-
-      setError("Unable to delete cell.");
-    } finally {
-      setSaving(false);
+    // 3. Update active/selected cell
+    if (latestCells.length > 0) {
+      setActiveCellId(latestCells[0].id);
+      setSelectedCellId(latestCells[0].id);
+    } else {
+      setActiveCellId(null);
+      setSelectedCellId(null);
     }
+  } catch (err) {
+    console.error(err);
+    setError("Unable to delete cell.");
+  } finally {
+    setSaving(false);
   }
-
+}
   //////////////////////////////////////////////////////
   // DUPLICATE
   //////////////////////////////////////////////////////
@@ -243,8 +297,7 @@ if (latestCells.length > 0) {
             source:
               original.source,
 
-            position:
-              cells.length,
+            
           }
         );
 
@@ -270,6 +323,130 @@ if (latestCells.length > 0) {
       setSaving(false);
     }
   }
+
+
+
+//////////////////////////////////////////////////////
+// UPDATE CELL
+//////////////////////////////////////////////////////
+
+async function updateCell(
+  cellId: string,
+  source: string
+) {
+  if (!notebook) return;
+
+  try {
+    const updatedCell = await cellService.update(
+      notebook.id,
+      cellId,
+      {
+        source,
+      }
+    );
+
+    setCells((prev) =>
+      prev.map((cell) =>
+        cell.id === cellId
+          ? updatedCell
+          : cell
+      )
+    );
+  } catch (err) {
+    console.error(err);
+    setError("Unable to update cell.");
+  }
+}
+
+
+//////////////////////////////////////////////////////
+// FOCUS NEXT CELL
+//////////////////////////////////////////////////////
+
+function focusNextCell(cellId: string) {
+  const index = cells.findIndex(
+    (cell) => cell.id === cellId
+  );
+
+  if (index === -1) return;
+
+  if (index < cells.length - 1) {
+    const next = cells[index + 1];
+
+    setActiveCellId(next.id);
+    setSelectedCellId(next.id);
+  }
+}
+
+
+//////////////////////////////////////////////////////
+// RUN ALL CELLS
+//////////////////////////////////////////////////////
+
+async function runAllCells() {
+  if (!notebook) return;
+
+  try {
+    setSaving(true);
+
+    // Always execute latest cells
+    const latestCells = await refreshCells();
+
+    for (const cell of latestCells) {
+      if (cell.cell_type !== "code") continue;
+
+      await cellService.execute(
+        notebook.id,
+        cell.id
+      );
+
+      // refresh output after every execution
+      await refreshCells();
+    }
+  } catch (err) {
+    console.error(err);
+
+    setError("Failed to run notebook.");
+  } finally {
+    setSaving(false);
+  }
+}
+
+//////////////////////////////////////////////////////
+// RESTART KERNEL
+//////////////////////////////////////////////////////
+
+async function restartKernel() {
+  if (!notebook) return;
+
+  try {
+    await cellService.restartKernel(
+      notebook.id
+    );
+
+    alert("Kernel restarted.");
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+//////////////////////////////////////////////////////
+// INTERRUPT KERNEL
+//////////////////////////////////////////////////////
+
+async function interruptKernel() {
+  if (!notebook) return;
+
+  try {
+    await cellService.interruptKernel(
+      notebook.id
+    );
+
+    alert("Execution interrupted.");
+  } catch (err) {
+    console.error(err);
+  }
+}
 
   //////////////////////////////////////////////////////
   // EFFECTS
@@ -303,10 +480,19 @@ if (latestCells.length > 0) {
         createCodeCell,
         createMarkdownCell,
 
+        executeCell,
+        runAllCells,
+
+        focusNextCell,
+
         deleteCell,
         duplicateCell,
 
+        updateCell,
+
         setCells,
+        restartKernel,
+        interruptKernel,
 
         setActiveCellId,
         setSelectedCellId,

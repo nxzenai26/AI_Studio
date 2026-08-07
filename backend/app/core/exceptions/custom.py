@@ -1,6 +1,6 @@
 class AIStudioException(Exception):
     """
-    Base exception for AI Studio.
+    Base exception for NxZenAI Studio.
     """
 
     def __init__(

@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 
+import AuthService from "@/services/auth.service";
 import NotebookService from "@/services/notebook.service";
 
 import {
@@ -46,7 +47,17 @@ export function NotebookProvider({
   const [loading, setLoading] =
     useState(true);
 
+  //////////////////////////////////////////////////////
+  // Refresh Notebooks
+  //////////////////////////////////////////////////////
+
   async function refresh() {
+    // Do not call backend if user is not logged in
+    if (!AuthService.isAuthenticated()) {
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -54,10 +65,21 @@ export function NotebookProvider({
         await NotebookService.getAll();
 
       setNotebooks(data);
+    } catch (err: any) {
+      // Ignore expired token errors.
+      if (
+        err?.response?.status !== 401
+      ) {
+        console.error(err);
+      }
     } finally {
       setLoading(false);
     }
   }
+
+  //////////////////////////////////////////////////////
+  // Create Notebook
+  //////////////////////////////////////////////////////
 
   async function createNotebook(
     notebook: CreateNotebookRequest
@@ -67,6 +89,10 @@ export function NotebookProvider({
     await refresh();
   }
 
+  //////////////////////////////////////////////////////
+  // Delete Notebook
+  //////////////////////////////////////////////////////
+
   async function deleteNotebook(
     id: string
   ) {
@@ -75,9 +101,17 @@ export function NotebookProvider({
     await refresh();
   }
 
+  //////////////////////////////////////////////////////
+  // Initial Load
+  //////////////////////////////////////////////////////
+
   useEffect(() => {
     refresh();
   }, []);
+
+  //////////////////////////////////////////////////////
+  // Provider
+  //////////////////////////////////////////////////////
 
   return (
     <NotebookContext.Provider
@@ -94,14 +128,19 @@ export function NotebookProvider({
   );
 }
 
+//////////////////////////////////////////////////////
+// Hook
+//////////////////////////////////////////////////////
+
 export function useNotebook() {
   const context =
     useContext(NotebookContext);
 
-  if (!context)
+  if (!context) {
     throw new Error(
       "NotebookContext missing"
     );
+  }
 
   return context;
 }

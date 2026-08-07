@@ -11,6 +11,7 @@ export default async function NotebookPage({
   return (
     <NotebookEditorProvider notebookId={id}>
       <NotebookEditor />
+      
     </NotebookEditorProvider>
   );
 }

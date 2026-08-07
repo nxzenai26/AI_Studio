@@ -1,6 +1,6 @@
 import api from "@/lib/api";
 
-import {
+import type {
   Cell,
   CellListResponse,
   CellResponse,
@@ -9,137 +9,173 @@ import {
   ReorderCellsRequest,
 } from "@/types/cell";
 
+//////////////////////////////////////////////////////////
+// Execution Response
+//////////////////////////////////////////////////////////
+
+export interface ExecuteCellResponse {
+  notebook_id: string;
+  cell_id: string;
+  execution_count: number;
+  outputs: any[];
+}
+
 class CellService {
-  /**
-   * Get all cells in a notebook
-   */
-  async list(notebookId: string): Promise<Cell[]> {
-    try {
-      const response = await api.get<CellListResponse>(
-        `/notebooks/${notebookId}/cells`
+  ////////////////////////////////////////////////////////
+  // List Cells
+  ////////////////////////////////////////////////////////
+
+  async list(
+    notebookId: string,
+  ): Promise<Cell[]> {
+    const response =
+      await api.get<CellListResponse>(
+        `/notebooks/${notebookId}/cells`,
       );
 
-      return response.data.data;
-    } catch (error) {
-      console.error("Failed to fetch notebook cells:", error);
-      throw error;
-    }
-  }
-
-  /**
-   * Get a single cell
-   *
-   * NOTE:
-   * Your current backend DOES NOT expose:
-   *
-   * GET /notebooks/{notebookId}/cells/{cellId}
-   *
-   * Keep this method commented until the endpoint exists.
-   */
-
-  /*
-  async get(
-    notebookId: string,
-    cellId: string
-  ): Promise<Cell> {
-    const response = await api.get<CellResponse>(
-      `/notebooks/${notebookId}/cells/${cellId}`
-    );
+    console.log("========== CELLS ==========");
+    console.log(response.data.data);
 
     return response.data.data;
   }
-  */
 
-  /**
-   * Create a cell
-   */
+  ////////////////////////////////////////////////////////
+  // Create Cell
+  ////////////////////////////////////////////////////////
+
   async create(
     notebookId: string,
-    payload: CreateCellRequest
+    payload: CreateCellRequest,
   ): Promise<Cell> {
-    try {
-      const response = await api.post<CellResponse>(
+    const response =
+      await api.post<CellResponse>(
         `/notebooks/${notebookId}/cells`,
-        payload
+        payload,
       );
 
-      return response.data.data;
-    } catch (error) {
-      console.error("Failed to create cell:", error);
-      throw error;
-    }
+    return response.data.data;
   }
 
-  /**
-   * Update a cell
-   */
+  ////////////////////////////////////////////////////////
+  // Update Cell
+  ////////////////////////////////////////////////////////
+
   async update(
     notebookId: string,
     cellId: string,
-    payload: UpdateCellRequest
+    payload: UpdateCellRequest,
   ): Promise<Cell> {
-    try {
-      const response = await api.patch<CellResponse>(
+    const response =
+      await api.patch<CellResponse>(
         `/notebooks/${notebookId}/cells/${cellId}`,
-        payload
+        payload,
       );
 
-      return response.data.data;
-    } catch (error) {
-      console.error("Failed to update cell:", error);
-      throw error;
-    }
+    return response.data.data;
   }
 
-  /**
-   * Delete a cell
-   */
+  ////////////////////////////////////////////////////////
+  // Delete Cell
+  ////////////////////////////////////////////////////////
+
   async delete(
     notebookId: string,
-    cellId: string
+    cellId: string,
   ): Promise<void> {
-    try {
-      await api.delete(
-        `/notebooks/${notebookId}/cells/${cellId}`
-      );
-    } catch (error) {
-      console.error("Failed to delete cell:", error);
-      throw error;
-    }
+    await api.delete(
+      `/notebooks/${notebookId}/cells/${cellId}`,
+    );
   }
 
-  /**
-   * Reorder notebook cells
-   */
+  ////////////////////////////////////////////////////////
+  // Execute Cell
+  ////////////////////////////////////////////////////////
+
+  async execute(
+    notebookId: string,
+    cellId: string,
+  ): Promise<ExecuteCellResponse> {
+    const response =
+      await api.post<ExecuteCellResponse>(
+        `/notebooks/${notebookId}/cells/${cellId}/execute`,
+      );
+
+    console.log("========== EXECUTE ==========");
+    console.log(response.data);
+
+    return response.data;
+  }
+
+  ////////////////////////////////////////////////////////
+  // Restart Kernel
+  ////////////////////////////////////////////////////////
+
+  async restartKernel(
+    notebookId: string,
+  ): Promise<void> {
+    await api.post(
+      `/notebooks/${notebookId}/restart`,
+    );
+  }
+
+  ////////////////////////////////////////////////////////
+  // Interrupt Kernel
+  ////////////////////////////////////////////////////////
+
+  async interruptKernel(
+    notebookId: string,
+  ): Promise<void> {
+    await api.post(
+      `/notebooks/${notebookId}/interrupt`,
+    );
+  }
+
+  ////////////////////////////////////////////////////////
+  // Shutdown Kernel
+  ////////////////////////////////////////////////////////
+
+  async shutdownKernel(
+    notebookId: string,
+  ): Promise<void> {
+    await api.post(
+      `/notebooks/${notebookId}/shutdown`,
+    );
+  }
+
+  ////////////////////////////////////////////////////////
+  // Kernel Status
+  ////////////////////////////////////////////////////////
+
+  async kernelStatus(
+    notebookId: string,
+  ): Promise<{
+    notebook_id: string;
+    status: string;
+  }> {
+    const response =
+      await api.get(
+        `/notebooks/${notebookId}/kernel/status`,
+      );
+
+    return response.data;
+  }
+
+  ////////////////////////////////////////////////////////
+  // Reorder Cells
+  ////////////////////////////////////////////////////////
+
   async reorder(
     notebookId: string,
-    payload: ReorderCellsRequest
+    payload: ReorderCellsRequest,
   ): Promise<Cell[]> {
-    try {
-      const response = await api.post<CellListResponse>(
+    const response =
+      await api.post<CellListResponse>(
         `/notebooks/${notebookId}/cells/reorder`,
-        payload
+        payload,
       );
 
-      return response.data.data;
-    } catch (error) {
-      console.error("Failed to reorder cells:", error);
-      throw error;
-    }
+    return response.data.data;
   }
-
-  /**
-   * Duplicate Cell
-   *
-   * TEMPORARILY DISABLED
-   *
-   * Your backend currently does not expose:
-   *
-   * GET /notebooks/{notebookId}/cells/{cellId}
-   *
-   * We'll implement duplication inside NotebookEditorContext
-   * using the cells already loaded in memory.
-   */
 }
 
 export default new CellService();

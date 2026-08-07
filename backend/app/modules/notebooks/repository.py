@@ -220,44 +220,58 @@ class NotebookRepository:
 
         return cell
 
-async def delete_cell(
-    self,
-    notebook: NotebookModel,
-    cell_id: str,
-) -> bool:
+    async def delete_cell(
+        self,
+        notebook: NotebookModel,
+        cell_id: str,
+    ) -> bool:
 
-    print("DELETE REQUEST:", cell_id)
+        print("=" * 60)
+        print("Notebook ID:", notebook.id)
+        print("Delete Cell:", cell_id)
+        print("Total Cells:", len(notebook.cells))
+        print("=" * 60)
 
-    deleted = False
+        deleted = False
 
-    for cell in notebook.cells:
-        print("CELL ID:", cell.id, type(cell.id))
-        print("REQUEST:", cell_id, type(cell_id))
+        for cell in notebook.cells:
+            print(
+                f"id={cell.id}, "
+                f"deleted={cell.is_deleted}, "
+                f"position={cell.position}"
+            )
 
-        if str(cell.id) == str(cell_id) and not cell.is_deleted:
-            cell.is_deleted = True
-            deleted = True
-            break
+            if str(cell.id) == str(cell_id) and not cell.is_deleted:
+                print("✅ MATCH FOUND")
+                cell.is_deleted = True
+                deleted = True
+                break
 
-    if not deleted:
-        print("NO MATCH FOUND")
-        return False
+        if not deleted:
+            print("❌ NO MATCH FOUND")
+            return False
 
-    active_cells = sorted(
-        (cell for cell in notebook.cells if not cell.is_deleted),
-        key=lambda c: c.position,
-    )
+        active_cells = sorted(
+            (
+                cell
+                for cell in notebook.cells
+                if not cell.is_deleted
+            ),
+            key=lambda c: c.position,
+        )
 
-    for position, cell in enumerate(active_cells):
-        cell.position = position
+        for position, cell in enumerate(active_cells):
+            cell.position = position
 
-    notebook.updated_at = datetime.now(UTC)
+        notebook.updated_at = datetime.now(UTC)
 
-    await self.update_notebook(notebook)
+        await self.update_notebook(notebook)
 
-    return True
+        print("✅ Cell deleted successfully")
 
-async def reorder_cells(
+        return True
+
+    async def reorder_cells(
         self,
         notebook: NotebookModel,
         positions: dict[str, int],

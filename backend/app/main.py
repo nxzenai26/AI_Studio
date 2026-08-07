@@ -57,7 +57,7 @@ app.include_router(api_router)
 app.include_router(system_router)
 
 
-logger.info("AI Studio Backend Initialised")
+logger.info("NxZenAI Studio Backend Initialised")
 
 
 # ---------------------------------------------------------
@@ -70,7 +70,7 @@ async def root():
 
     return APIResponse(
         success=True,
-        message="AI Studio Backend is running.",
+        message="NxZenAI Studio Backend is running.",
         data={
             "application": settings.app_name,
             "version": settings.app_version,

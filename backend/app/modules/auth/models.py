@@ -1,7 +1,12 @@
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    EmailStr,
+    Field,
+)
 
 
 class UserModel(BaseModel):
@@ -24,18 +29,33 @@ class UserModel(BaseModel):
 
     hashed_password: str
 
+    # --------------------------------------------------
+    # RBAC
+    # --------------------------------------------------
+
     role: Literal[
         "super_admin",
         "admin",
-        "instructor",
-        "student",
-    ] = "student"
+        "user",
+    ] = "user"
+
+    # --------------------------------------------------
+    # Organization
+    # --------------------------------------------------
 
     organization_id: str | None = None
+
+    # --------------------------------------------------
+    # Account Status
+    # --------------------------------------------------
 
     is_active: bool = True
 
     is_verified: bool = False
+
+    # --------------------------------------------------
+    # Audit Fields
+    # --------------------------------------------------
 
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(UTC)

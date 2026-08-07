@@ -33,9 +33,7 @@ export interface CellListResponse {
 
 export interface CreateCellRequest {
   cell_type: "code" | "markdown";
-  source?: string;
-  position?: number;
-  metadata?: Record<string, any>;
+  source: string;
 }
 
 export interface UpdateCellRequest {

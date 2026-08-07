@@ -2,7 +2,7 @@
 Execution Executor
 
 Responsible for converting subprocess execution results into
-AI Studio execution models.
+NxZenAI Studio execution models.
 
 The executor does NOT know anything about:
 

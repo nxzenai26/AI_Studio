@@ -1,5 +1,13 @@
-2026-07-31 17:43:56.937 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:56.965 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:57.094 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:57.107 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 18:04:34.938 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Cell not found.
+2026-08-07 17:28:22.603 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:28:22.770 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:31:16.915 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:31:16.936 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:30.235 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:30.242 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:30.259 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:32.486 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:32.491 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:05:58.467 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:05:58.497 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:05:58.508 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 21:34:34.704 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.

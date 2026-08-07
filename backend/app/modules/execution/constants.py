@@ -1,7 +1,7 @@
 """
 Execution Engine Constants
 
-AI Studio
+NxZenAI Studio
 """
 
 from enum import Enum

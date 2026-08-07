@@ -3,7 +3,6 @@
 import { GripVertical } from "lucide-react";
 
 import { Cell } from "@/types/cell";
-
 import { useNotebookEditor } from "@/contexts/NotebookEditorContext";
 
 import CellToolbar from "./CellToolbar";
@@ -18,41 +17,57 @@ export default function CellContainer({
   children,
 }: Props) {
   const {
+    executeCell,
     deleteCell,
     duplicateCell,
+    updateCell,
   } = useNotebookEditor();
 
+  /**
+   * Execute Cell
+   */
+  async function handleRun() {
+  await updateCell(
+    cell.id,
+    cell.source
+  );
+
+  await executeCell(cell.id);
+}
+
+  /**
+   * Delete Cell
+   */
   async function handleDelete() {
     const confirmed = window.confirm(
-      "Delete this cell?"
+      "Are you sure you want to delete this cell?"
     );
 
     if (!confirmed) return;
 
-    await deleteCell(cell.id);
+    try {
+      await deleteCell(cell.id);
+    } catch (error) {
+      console.error("Failed to delete cell:", error);
+    }
   }
 
+  /**
+   * Duplicate Cell
+   */
   async function handleDuplicate() {
-    await duplicateCell(cell.id);
-  }
-
-  async function handleRun() {
-    console.log(
-      "Run cell:",
-      cell.id
-    );
-
-    // Phase 2
-    // executeCell(cell.id)
+    try {
+      await duplicateCell(cell.id);
+    } catch (error) {
+      console.error("Failed to duplicate cell:", error);
+    }
   }
 
   return (
     <div className="rounded-xl border border-slate-800 bg-[#111827] shadow-sm">
-
+      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-800 px-4 py-3">
-
         <div className="flex items-center gap-3">
-
           <GripVertical
             size={18}
             className="cursor-move text-slate-500"
@@ -65,7 +80,6 @@ export default function CellContainer({
           <span className="text-xs text-slate-500">
             Cell {cell.position + 1}
           </span>
-
         </div>
 
         <CellToolbar
@@ -73,13 +87,12 @@ export default function CellContainer({
           onDelete={handleDelete}
           onDuplicate={handleDuplicate}
         />
-
       </div>
 
+      {/* Cell Content */}
       <div className="p-5">
         {children}
       </div>
-
     </div>
   );
 }

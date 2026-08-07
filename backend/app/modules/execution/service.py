@@ -1,5 +1,5 @@
 """
-AI Studio Execution Service
+NxZenAI Studio Execution Service
 
 Coordinates notebook execution.
 

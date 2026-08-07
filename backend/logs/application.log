@@ -1,59 +1,223 @@
-2026-07-31 12:19:03.488 | INFO     | app.main:<module>:19 - AI Studio Backend Initialised
-2026-07-31 12:19:03.490 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 12:19:03.491 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 12:19:04.872 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 12:19:47.502 | INFO     | app.main:root:25 - Root endpoint accessed
-2026-07-31 15:57:25.601 | INFO     | app.main:<module>:19 - AI Studio Backend Initialised
-2026-07-31 15:57:25.604 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 15:57:25.605 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 15:57:27.295 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 16:38:48.832 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 16:38:48.877 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 16:38:48.878 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 16:38:51.274 | INFO     | app.main:<module>:20 - AI Studio Backend Initialised
-2026-07-31 16:38:51.277 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 16:38:51.277 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 16:38:51.837 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 16:39:21.202 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 16:39:21.233 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 16:39:21.234 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 16:39:22.949 | INFO     | app.main:<module>:21 - AI Studio Backend Initialised
-2026-07-31 16:39:22.951 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 16:39:22.952 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 16:39:23.421 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 16:39:23.594 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 16:39:23.622 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 16:39:23.623 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 16:39:25.471 | INFO     | app.main:<module>:31 - AI Studio Backend Initialised
-2026-07-31 16:39:25.473 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 16:39:25.473 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 16:39:25.969 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 16:40:05.242 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 16:40:05.272 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 16:40:05.272 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 16:40:06.972 | INFO     | app.main:<module>:60 - AI Studio Backend Initialised
-2026-07-31 16:40:06.973 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 16:40:06.974 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 16:40:07.487 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 17:43:56.937 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:56.965 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:57.094 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 17:43:57.107 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
-2026-07-31 18:04:34.938 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Cell not found.
-2026-07-31 18:11:12.658 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 18:11:12.721 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 18:11:12.722 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 18:12:15.067 | INFO     | app.main:<module>:60 - AI Studio Backend Initialised
-2026-07-31 18:12:15.069 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 18:12:15.070 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 18:12:15.716 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 18:12:52.865 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 18:12:52.899 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 18:12:52.900 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
-2026-07-31 18:12:55.093 | INFO     | app.main:<module>:60 - AI Studio Backend Initialised
-2026-07-31 18:12:55.096 | INFO     | app.lifespan:lifespan:12 - Starting AI Studio
-2026-07-31 18:12:55.097 | INFO     | app.core.database.mongodb:connect:15 - Connecting to MongoDB...
-2026-07-31 18:12:55.661 | SUCCESS  | app.core.database.mongodb:connect:28 - MongoDB Connected Successfully
-2026-07-31 18:23:12.677 | WARNING  | app.core.database.mongodb:disconnect:35 - Closing MongoDB Connection
-2026-07-31 18:23:12.714 | SUCCESS  | app.core.database.mongodb:disconnect:39 - MongoDB Connection Closed
-2026-07-31 18:23:12.714 | INFO     | app.lifespan:lifespan:20 - AI Studio Shutdown Complete
+2026-08-07 17:28:22.603 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:28:22.770 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:31:16.915 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:31:16.936 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 17:58:51.727 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 17:58:51.786 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 17:58:51.786 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 17:59:03.336 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 17:59:03.339 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 17:59:03.339 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 17:59:05.211 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:40:45.978 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:40:46.389 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:40:46.391 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:42:11.577 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:42:11.633 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:42:11.633 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:42:12.718 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:49:30.235 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:30.242 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:30.259 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:32.486 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:49:32.491 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 18:56:56.080 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:56:56.119 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:56:56.119 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:57:08.299 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:57:08.302 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:57:08.303 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:57:09.063 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:57:40.987 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:57:41.030 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:57:41.031 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:57:47.245 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:57:47.248 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:57:47.248 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:57:47.970 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:57:56.520 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:57:56.561 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:57:56.562 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:03.542 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:03.546 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:03.547 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:04.502 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:58:04.606 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:58:04.647 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:58:04.647 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:10.276 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:10.279 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:10.279 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:10.963 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:58:19.855 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:58:19.890 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:58:19.891 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:26.333 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:26.335 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:26.336 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:26.972 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:58:27.848 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:58:27.888 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:58:27.888 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:33.992 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:33.997 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:33.997 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:34.670 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:58:34.782 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:58:34.821 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:58:34.821 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:40.839 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:40.842 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:40.842 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:41.485 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 18:58:41.601 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 18:58:41.639 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 18:58:41.640 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 18:58:47.186 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 18:58:47.189 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 18:58:47.189 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 18:58:47.845 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 19:26:37.416 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 19:26:37.570 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 19:26:37.572 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 19:26:53.636 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 19:26:53.638 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 19:26:53.639 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 19:26:55.388 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 19:26:55.498 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 19:26:55.533 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 19:26:55.533 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 19:27:01.199 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 19:27:01.203 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 19:27:01.203 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 19:27:01.812 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:05:58.467 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:05:58.497 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:05:58.508 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.
+2026-08-07 20:12:49.185 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:12:49.231 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:12:49.231 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:13:00.830 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:13:00.834 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:13:00.834 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:13:01.761 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:13:14.267 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:13:14.352 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:13:14.353 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:13:35.498 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:13:35.502 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:13:35.502 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:13:36.119 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:13:36.224 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:13:36.269 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:13:36.270 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:13:41.491 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:13:41.494 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:13:41.494 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:13:42.102 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:14:33.127 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:14:33.168 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:14:33.168 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:14:39.483 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:14:39.486 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:14:39.486 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:14:40.178 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:14:40.292 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:14:40.326 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:14:40.327 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:14:45.727 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:14:45.730 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:14:45.730 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:14:46.377 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:14:46.492 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:14:46.534 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:14:46.535 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:14:52.330 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:14:52.333 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:14:52.334 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:14:52.954 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:14:53.057 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:14:53.094 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:14:53.094 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:14:58.745 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:14:58.749 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:14:58.749 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:14:59.490 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:14:59.593 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:14:59.650 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:14:59.650 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:15:04.930 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:15:04.933 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:15:04.934 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:15:05.546 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:15:08.391 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:15:08.429 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:15:08.430 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:15:13.926 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:15:13.929 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:15:13.929 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:15:14.545 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:18:09.583 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:18:09.631 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:18:09.631 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:18:14.876 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:18:14.879 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:18:14.879 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:18:15.541 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:18:15.650 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:18:15.685 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:18:15.686 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:18:20.592 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:18:20.594 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:18:20.595 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:18:21.186 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:28:13.350 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:28:13.394 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:28:13.394 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:28:20.745 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:28:20.748 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:28:20.749 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:28:21.460 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:28:41.015 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:28:41.050 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:28:41.051 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:29:03.070 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:29:03.073 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:29:03.073 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:29:03.674 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:29:12.648 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:29:12.687 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:29:12.688 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:29:28.693 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:29:28.696 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:29:28.696 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:29:29.413 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:29:38.824 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:29:38.873 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:29:38.873 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:29:44.413 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:29:44.417 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:29:44.417 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:29:45.024 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:32:21.842 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:32:21.882 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:32:21.882 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:32:27.549 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:32:27.551 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:32:27.551 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:32:28.198 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:48:31.089 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:48:31.146 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:48:31.147 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:48:53.376 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:48:53.378 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:48:53.378 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:48:54.114 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 20:48:59.475 | WARNING  | app.core.database.mongodb:disconnect:49 - Closing MongoDB Connection
+2026-08-07 20:48:59.528 | SUCCESS  | app.core.database.mongodb:disconnect:55 - MongoDB Connection Closed
+2026-08-07 20:48:59.528 | INFO     | app.lifespan:lifespan:20 - NxZenAI Studio Shutdown Complete
+2026-08-07 20:49:04.899 | INFO     | app.main:<module>:60 - NxZenAI Studio Backend Initialised
+2026-08-07 20:49:04.902 | INFO     | app.lifespan:lifespan:12 - Starting NxZenAI Studio
+2026-08-07 20:49:04.902 | INFO     | app.core.database.mongodb:connect:21 - Connecting to MongoDB...
+2026-08-07 20:49:05.550 | SUCCESS  | app.core.database.mongodb:connect:42 - MongoDB Connected Successfully
+2026-08-07 21:34:34.704 | ERROR    | app.core.exceptions.handlers:ai_studio_exception_handler:17 - Invalid or expired token.

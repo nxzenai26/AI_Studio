@@ -1,5 +1,5 @@
 """
-AI Studio Kernel Manager
+NxZenAI Studio Kernel Manager
 
 Responsible for managing persistent Jupyter kernels.
 
@@ -286,7 +286,8 @@ class KernelManager:
                 raise ExecutionTimeout() from exc
 
             msg_type = message["msg_type"]
-            content = message["content"]
+
+            
 
             if msg_type == "execute_reply":
 
@@ -333,25 +334,44 @@ class KernelManager:
             msg_type = message["msg_type"]
             content = message["content"]
 
-            if msg_type == "stream":
-                outputs.append(
-                    ExecutionOutput(
-                        output_type=ExecutionOutputType.STREAM,
-                        content=content["text"],
-                        metadata={"name": content.get("name")},
-                    )
-                )
-                continue
+            if msg_type == "execute_result":
+                print("\n" + "=" * 100)
+                print("EXECUTE RESULT")
+                print(content)
+                print("=" * 100 + "\n")
 
-            if msg_type in ("execute_result"):
+
+
                 outputs.append(
                     ExecutionOutput(
                         output_type=ExecutionOutputType.EXECUTE_RESULT,
                         content=content,
+                        metadata={
+                            "name": content.get("name"),
+                        },
                     )
                 )
                 continue
-            if msg_type in ("display_data"):
+
+
+            if msg_type == "stream":
+                print("\n" + "=" * 100)
+                print("STREAM")
+                print(content)
+                print("=" * 100 + "\n")
+                outputs.append(
+                    ExecutionOutput(
+                        output_type=ExecutionOutputType.STREAM,
+                        content=content.get("text", ""),
+                    )
+                )
+                continue
+
+            if msg_type == "display_data":
+                print("\n" + "=" * 100)
+                print("DISPLAY DATA")
+                print(content)
+                print("=" * 100 + "\n")
                 outputs.append(
                     ExecutionOutput(
                         output_type=ExecutionOutputType.DISPLAY_DATA,
@@ -359,6 +379,7 @@ class KernelManager:
                     )
                 )
                 continue
+
             if msg_type == "error":
                 outputs.append(
                     ExecutionOutput(

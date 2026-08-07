@@ -1,5 +1,5 @@
 """
-AI Studio Execution Router
+NxZenAI Studio Execution Router
 
 REST API endpoints for notebook execution.
 """

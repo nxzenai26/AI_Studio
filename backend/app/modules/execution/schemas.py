@@ -1,5 +1,5 @@
 """
-AI Studio Execution Schemas
+NxZenAI Studio Execution Schemas
 
 Request and Response schemas for notebook execution.
 """

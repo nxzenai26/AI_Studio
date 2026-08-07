@@ -9,7 +9,7 @@ from app.core.logging.logger import logger
 @asynccontextmanager
 async def lifespan(app: FastAPI):
 
-    logger.info("Starting AI Studio")
+    logger.info("Starting NxZenAI Studio")
 
     await MongoDB.connect()
 
@@ -17,4 +17,4 @@ async def lifespan(app: FastAPI):
 
     await MongoDB.disconnect()
 
-    logger.info("AI Studio Shutdown Complete")
+    logger.info("NxZenAI Studio Shutdown Complete")

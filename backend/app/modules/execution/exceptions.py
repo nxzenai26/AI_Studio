@@ -1,7 +1,7 @@
 """
 Execution Engine Exceptions
 
-All execution-specific exceptions for AI Studio.
+All execution-specific exceptions for NxZenAI Studio.
 """
 
 from app.core.exceptions.custom import AIStudioException
